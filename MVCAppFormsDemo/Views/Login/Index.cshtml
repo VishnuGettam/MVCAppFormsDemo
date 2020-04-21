@@ -1,0 +1,52 @@
+﻿@model MVCAppFormsDemo.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Login Page";
+}
+
+
+
+
+<h2>User Login</h2>
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+
+    <div>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <td colspan="2"> <b style="position:center"> User Credentials </b> </td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        User Name :
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.UserName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password :
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.Password)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <div>
+        <input type="submit" title="Login" />
+    </div>
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
