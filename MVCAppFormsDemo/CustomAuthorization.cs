@@ -19,5 +19,15 @@ namespace MVCAppFormsDemo
         {
             return base.AuthorizeCore(httpContext);
         }
+
+        public override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            base.OnAuthorization(filterContext);
+        }
+
+        protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+        {
+            base.HandleUnauthorizedRequest(filterContext);
+        }
     }
 }
